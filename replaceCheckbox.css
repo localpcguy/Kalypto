@@ -1,0 +1,15 @@
+p {
+    font: 1.1em Arial, sans-serif;
+    color:#333;
+    margin-bottom:1em;   
+}
+/* Switch Styles */
+.toggle {
+    background:url("https://github.com/localpcguy/replaceCheckbox/raw/master/images/checkbox.png") bottom left;
+    display:block;
+    width:20px;
+    height:18px;
+}
+.toggle.checked {
+    background-position:top left;
+}
