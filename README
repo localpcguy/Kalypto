@@ -1,0 +1,18 @@
+/********************************
+* Replace Checkbox plugin
+* 
+* by Mike Behnke
+*
+* Description: Basic plugin to create a link to use in place of a checkbox.  
+* Styles for the checked/non-checked state should be defined in a stylesheet, 
+* the plugin mearly changes the class and keeps the checkbox updated.
+*
+* usage: $(function(){ $(".checkbox").replaceCheckbox(); });
+*
+* options: 
+*   {
+*		toggleClass: "toggle",
+*		checkedClass: "checked"
+*	}
+*
+********************************/
