@@ -8,13 +8,13 @@
     $.replaceCheckbox = function(element, options) {
 
         var defaults = {
-	        	toggleClass: "toggle",
-	        	checkedClass: "checked"
-	        },
+				toggleClass: "toggle",
+				checkedClass: "checked"
+			},
 			plugin = this,
 			$element = $(element),
 			buildCheckbox = function() {
-            	$element.after(function() {
+				$element.after(function() {
 					if ($element.is(":checked")) {
 						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "' ref='" + element.id + "'></a>";
 					} else {
@@ -54,15 +54,14 @@
         };
 
         plugin.init();
-    }
-
+    };
     $.fn.replaceCheckbox = function(options) {
         return this.each(function() {
-            if (undefined == $(this).data('replaceCheckbox')) {
+            if (undefined === $(this).data('replaceCheckbox')) {
                 var plugin = new $.replaceCheckbox(this, options);
                 $(this).data('replaceCheckbox', plugin);
             }
         });
-    }
+    };
 
 })(jQuery);

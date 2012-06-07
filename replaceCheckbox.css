@@ -11,5 +11,5 @@ p {
     height:18px;
 }
 .toggle.checked {
-    background-position:top left;
+    background-position: left top;
 }
