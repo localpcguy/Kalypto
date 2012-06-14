@@ -28,7 +28,7 @@
 				var checkboxID = $(element).attr("ref");
 				var $checkbox = $('#' + element.id);
 
-				if (this.tagName != "INPUT") {
+				if (this.tagName !== "INPUT") {
 					if ($checkbox.is(":checked")) {
 						$checkbox.prop("checked", false);
 					} else {
