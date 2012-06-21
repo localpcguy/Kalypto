@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>ReplaceButtonsAndBoxes</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="css/replaceRCInputs.css">
+</head>
+<body>
+
+    <h1>Replace RCInputs jQuery plugin</h1>
+     
+    <h2>Created &amp; copyright (c) by Mike Behnke</h2>
+
+    <p>http://www.local-pc-guy.com<br />
+    Twitter: @LocalPCGuy</p>
+
+    <p><strong>Description:</strong> Basic plugin to create a link to use in place of a checkbox or radio button.  Styles for the checked/non-checked state should be defined in a stylesheet, and the plugin mearly changes the class and keeps the checkbox updated.</p>
+
+    <div class="radioButtonDemo">        
+        <label for="radioDemo1">Radio 1</label>
+        <input type="radio" id="radioDemo1" name="rDemo" /><br />
+        <label for="radioDemo2">Radio 2</label>
+        <input type="radio" id="radioDemo2" name="rDemo" /><br />
+        <label for="radioDemo3">Radio 3</label>
+        <input type="radio" id="radioDemo3" name="rDemo" /><br />
+
+    </div>
+    <br />
+    <div class="checkboxDemo">
+        <label for="checkboxDemo">Checkbox</label>
+        <input type="checkbox" id="checkboxDemo" />
+    </div>
+
+    <p><strong>usage:</strong> $(function(){ $(".checkbox").replaceRCInputs(); });</p>
+
+    <p>options: <br />
+        <pre>
+        {
+            toggleClass: "toggle",
+            checkedClass: "checked"
+        }
+        </pre></p>
+
+    <p>https://github.com/localpcguy/replaceCheckbox</p>
+
+    <p>Released under MIT License<br />
+    http://lpg.mit-license.org/</p>
+
+    
+
+    <!-- JavaScript at the bottom for fast page loading: -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.js"><\/script>')</script>
+
+    <!-- scripts concatenated and minified via build script -->
+    <script src="js/replaceRCInputs.js"></script>
+    <script>
+        $("input[name=rDemo]").replaceRCInputs({hideInputs: false, toggleClass: "toggleR",});
+        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+    </script>
+    <!-- end scripts -->
+
+    <!-- Asynchronous Google Analytics snippet.-->
+    <!-- <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script> -->
+</body>
+</html>

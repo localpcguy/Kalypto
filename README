@@ -1,18 +1,30 @@
-/********************************
-* Replace Checkbox plugin
+/*************************************************************
+* Replace RCInputs jQuery plugin
 * 
-* by Mike Behnke
+* Created & copyright (c) by Mike Behnke
 *
-* Description: Basic plugin to create a link to use in place of a checkbox.  
-* Styles for the checked/non-checked state should be defined in a stylesheet, 
-* the plugin mearly changes the class and keeps the checkbox updated.
+* http://www.local-pc-guy.com
+* Twitter: @LocalPCGuy
 *
-* usage: $(function(){ $(".checkbox").replaceCheckbox(); });
+* Description: Basic plugin to create a graphic to use in 
+* place of a checkbox or radio button.  Styles for the 
+* checked/non-checked state should be defined in a 
+* stylesheet, and the plugin mearly changes the class and 
+* keeps the checkbox updated.
+*
+* usage:
+*        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
+*        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
 *
 * options: 
-*   {
-*		toggleClass: "toggle",
-*		checkedClass: "checked"
-*	}
+	{
+		toggleClass: "toggle",
+		checkedClass: "checked",
+		hideInputs: true
+	}
 *
-********************************/
+* https://github.com/localpcguy/replaceRCInputs
+* Released under MIT License
+* http://lpg.mit-license.org/
+*
+*************************************************************/
