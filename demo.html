@@ -37,13 +37,18 @@
         <input type="checkbox" id="checkboxDemo" />
     </div>
 
-    <p><strong>usage:</strong> $(function(){ $(".checkbox").replaceRCInputs(); });</p>
+    <p><strong>usage:</strong><br />
+        <pre>
+        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});<br />
+        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+        </pre></p>
 
-    <p>options: <br />
+    <p>options/defaults: <br />
         <pre>
         {
             toggleClass: "toggle",
-            checkedClass: "checked"
+            checkedClass: "checked",
+            hideInputs: true
         }
         </pre></p>
 
