@@ -10,6 +10,8 @@
 * usage:
 *        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
 *        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+* events:
+* 		 rc_checked: when an element is checked (watch the )
 ********************************/
 ;(function($) {
 
@@ -45,19 +47,21 @@
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
 						if ($el.is(":checked") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
-							$el.prop("checked", false);
+							$el.prop("checked", false).trigger("rc_unchecked");
 							$el.next().removeClass(plugin.settings.checkedClass);
 						} else {
-							$el.prop("checked", true);
+							$el.prop("checked", true).trigger("rc_checked");
 							$el.next().addClass(plugin.settings.checkedClass);
 						}
 					});
 				} else {
 					if ($element.attr("type") === "radio") {
 						$('input[name='+ $element.attr("name") +']').each(function(){
-							$(this).next().removeClass(plugin.settings.checkedClass);
+							$(this).trigger("rc_unchecked").next().removeClass(plugin.settings.checkedClass);
 						});
 					}
+					if ($element.is(":checked")) {$element.trigger("rc_checked"); }
+					else {$element.trigger("rc_unchecked");}
 					$element.next().toggleClass(plugin.settings.checkedClass);
 				}
 			},
