@@ -10,8 +10,9 @@
 * usage:
 *        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
 *        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
-* events:
-* 		 rc_checked: when an element is checked (watch the )
+* events: (bound on the input)
+*        rc_checked: when an element is checked 
+*        rc_unchecked: when an element is checked
 ********************************/
 ;(function($) {
 
