@@ -18,20 +18,21 @@
 
     $.replaceRCInputs = function(element, options) {
 
-        var defaults = {
+        var plugin = this,
+			$element = $(element),
+			defaults = {
 				toggleClass: "toggle",
 				checkedClass: "checked",
-				hideInputs: true
+				hideInputs: true,
+				dataLabel: $element.data("label") || ""
 			},
-			plugin = this,
-			$element = $(element),
 			$customEl,
 			buildCustomElement = function() {
 				$element.after(function() {
 					if ($element.is(":checked")) {
-						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "'></a>";
+						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
 					} else {
-						return "<a href='#' class='" + plugin.settings.toggleClass + "'></a>";
+						return "<a href='#' class='" + plugin.settings.toggleClass + "'>" + plugin.settings.dataLabel + "</a>";
 					}
 				});
 				if (plugin.settings.hideInputs) {
