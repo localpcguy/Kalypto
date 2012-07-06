@@ -7,6 +7,7 @@
     <meta name="description" content="Replace RCInputs : Replaces Radio Buttons or Checkbox elements with graphical version(s)" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/replaceRCInputs.css">
 
     <title>Replace RCInputs</title>
   </head>
@@ -33,48 +34,46 @@
       <section id="main_content" class="inner">
         <h1>Replace RCInputs jQuery plugin</h1>
 
-<h2>Created &amp; copyright (c) by Mike Behnke</h2>
+<h3>Created &amp; copyright (c) by Mike Behnke</h3>
 
-<p><a href="http://www.local-pc-guy.com">local-pc-guy.com</a>
+<p><a href="http://www.local-pc-guy.com">local-pc-guy.com</a><br />
 Twitter: <a href="http://twitter.com/localpcguy">@LocalPCGuy</a></p>
 
 <p><strong>Description:</strong> Basic plugin to create a link to use in place of a checkbox or radio button.  Styles for the checked/non-checked state should be defined in a stylesheet, and the plugin mearly changes the class and keeps the checkbox updated.</p>
 
-<pre><code>&lt;div class="radioButtonDemo"&gt;        
-    &lt;label for="radioDemo1"&gt;Radio 1&lt;/label&gt;
-    &lt;input type="radio" id="radioDemo1" name="rDemo" /&gt;&lt;br /&gt;
-    &lt;label for="radioDemo2"&gt;Radio 2&lt;/label&gt;
-    &lt;input type="radio" id="radioDemo2" name="rDemo" /&gt;&lt;br /&gt;
-    &lt;label for="radioDemo3"&gt;Radio 3&lt;/label&gt;
-    &lt;input type="radio" id="radioDemo3" name="rDemo" /&gt;&lt;br /&gt;
-&lt;/div&gt;
+<div class="radioButtonDemo">
+    <label for="radioDemo1">Radio 1</label>
+    <input type="radio" id="radioDemo1" name="rDemo" /><br />
+    <label for="radioDemo2">Radio 2</label>
+    <input type="radio" id="radioDemo2" name="rDemo" /><br />
+    <label for="radioDemo3">Radio 3</label>
+    <input type="radio" id="radioDemo3" name="rDemo" /><br />
+</div>
 
-&lt;div class="checkboxDemo"&gt;
-    &lt;label for="checkboxDemo"&gt;Checkbox&lt;/label&gt;
-    &lt;input type="checkbox" id="checkboxDemo" /&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="checkboxDemo">
+    <label for="checkboxDemo">Checkbox</label>
+    <input type="checkbox" id="checkboxDemo" />
+</div>
+
 
 <p><strong>usage:</strong></p>
 
-<p><code>$("input[name=rDemo]").replaceRCInputs({hideInputs: false});
-$("#checkboxDemo").replaceRCInputs({hideInputs: false});</code></p>
+<p><pre><code>$("input[name=rDemo]").replaceRCInputs({hideInputs: false});<br />
+$("#checkboxDemo").replaceRCInputs({hideInputs: false});</code></pre></p>
 
 <p><strong>Events:</strong> (bound on the input)</p>
 
-<p><code>
-rc_checked: when an element is checked</code></p>
-
-<p><code>
-rc_unchecked: when an element is checked</code></p>
+<p><pre><code>
+rc_checked: when an element is checked</code><br />
+rc_unchecked: when an element is checked</code></pre></p>
 
 <p><strong>options/defaults:</strong></p>
 
-<p><code>{
-    toggleClass: "toggle",
-    checkedClass: "checked",
-    hideInputs: true
-}</code></p>
+<p><pre><code>{<br />
+    toggleClass: "toggle",<br />
+    checkedClass: "checked",<br />
+    hideInputs: true<br />
+}</code></pre></p>
 
 <p><a href="https://github.com/localpcguy/replaceRCInputs">View replaceRCInputs on GitHub</a></p>
 
@@ -90,17 +89,29 @@ rc_unchecked: when an element is checked</code></p>
       </footer>
     </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-20441923-5");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <!-- JavaScript at the bottom for fast page loading: -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="javascripts/jquery-1.7.2.js"><\/script>')</script>
 
+    <!-- scripts concatenated and minified via build script -->
+    <script src="javascripts/replaceRCInputs.js"></script>
+    <script>
+      $("input[name=rDemo]").replaceRCInputs({hideInputs: false, toggleClass: "toggleR",});
+      $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+    </script>
+    <!-- end scripts -->
 
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-20441923-5");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
   </body>
 </html>
