@@ -11,7 +11,7 @@
 *        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
 *        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
 * events: (bound on the input)
-*        rc_checked: when an element is checked 
+*        rc_checked: when an element is checked
 *        rc_unchecked: when an element is checked
 ********************************/
 ;(function($) {
@@ -48,7 +48,7 @@
 				if (this.tagName !== "INPUT") {
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
-						if ($el.is(":checked") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
+						if (($el.is(":checked") && $el.attr("type") === "checkbox") || ($el.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
 							$el.prop("checked", false).trigger("rc_unchecked");
 							$el.next().removeClass(plugin.settings.checkedClass);
 						} else {
