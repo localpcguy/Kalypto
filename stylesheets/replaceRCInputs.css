@@ -6,13 +6,13 @@ p {
 .radioButtonDemo ul {
     list-style: none;
 }
-.radioButtonDemo li {
+.radioButtonDemo ul li {
     overflow: hidden;
     list-style: none;
 }
 .radioButtonDemo input, 
 .radioButtonDemo label, 
-.radioButtonDemo .toggle {
+.radioButtonDemo .toggleR {
     float: left;
     display:block;
     margin-right: 5px;
