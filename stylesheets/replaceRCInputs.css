@@ -3,6 +3,31 @@ p {
     color:#333;
     margin-bottom:1em;   
 }
+.radioButtonDemo ul {
+    list-style: none;
+}
+.radioButtonDemo li {
+    overflow: hidden;
+}
+.radioButtonDemo input, 
+.radioButtonDemo label, 
+.radioButtonDemo .toggle {
+    float: left;
+    margin-right: 5px;
+}
+.checkboxDemo ul {
+    list-style: none;
+}
+.checkboxDemo li {
+    overflow: hidden;
+}
+.checkboxDemo input, 
+.checkboxDemo label, 
+.checkboxDemo .toggle {
+    float: left;
+    margin-right: 5px;
+}
+
 /* Switch Styles */
 .toggle {
     background:url("../images/checkbox.png") bottom left;
