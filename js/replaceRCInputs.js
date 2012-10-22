@@ -14,7 +14,7 @@
 *        rc_checked: when an element is checked
 *        rc_unchecked: when an element is checked
 ********************************/
-;(function($) {
+;(function($, undefined) {
 
     $.replaceRCInputs = function(element, options) {
 
