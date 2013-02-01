@@ -1,0 +1,37 @@
+{
+  "name": "replaceRCInputs",
+  "title": "Replace Radio/Checkbox Inputs",
+  "description": "Replace RC Inputs lets you use CSS to style radio buttons and checkboxes.",
+	"keywords": [
+		"form",
+		"formfields",
+		"replacement",
+		"ui",
+    "checkbox",
+    "radio"
+	],
+  "version": "0.1.0",
+  "author": {
+    "name": "Mike Behnke",
+    "url": "http://www.local-pc-guy.com"
+  },
+  "maintainers": [
+    {
+      "name": "Mike Behnke",
+      "url": "http://www.local-pc-guy.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://lpg.mit-license.org/"
+    }
+  ],
+  "homepage": "http://localpcguy.github.com/replaceRCInputs/",
+  "demo": "http://localpcguy.github.com/replaceRCInputs/",
+  "bugs": "https://github.com/localpcguy/replaceRCInputs/issues",
+  "docs": "http://localpcguy.github.com/replaceRCInputs/",
+  "dependencies": {
+    "jquery": ">=1.6.2"
+  }
+}
