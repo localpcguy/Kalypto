@@ -10,25 +10,29 @@
 * usage:
 *        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
 *        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+* events: (bound on the input)
+*        rc_checked: when an element is checked
+*        rc_unchecked: when an element is checked
 ********************************/
-;(function($) {
+;(function($, undefined) {
 
     $.replaceRCInputs = function(element, options) {
 
-        var defaults = {
+        var plugin = this,
+			$element = $(element),
+			defaults = {
 				toggleClass: "toggle",
 				checkedClass: "checked",
-				hideInputs: true
+				hideInputs: true,
+				dataLabel: $element.data("label") || ""
 			},
-			plugin = this,
-			$element = $(element),
 			$customEl,
 			buildCustomElement = function() {
 				$element.after(function() {
 					if ($element.is(":checked")) {
-						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "'></a>";
+						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
 					} else {
-						return "<a href='#' class='" + plugin.settings.toggleClass + "'></a>";
+						return "<a href='#' class='" + plugin.settings.toggleClass + "'>" + plugin.settings.dataLabel + "</a>";
 					}
 				});
 				if (plugin.settings.hideInputs) {
@@ -45,21 +49,23 @@
 				if (this.tagName !== "INPUT") {
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
-						if ($el.is(":checked") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
-							$el.prop("checked", false);
-							$el.next().removeClass(plugin.settings.checkedClass).trigger("rc_unchecked");
+						if (($el.is(":checked") && $element.attr("type") === "checkbox") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
+							$el.prop("checked", false).trigger("rc_unchecked");
+							$el.next().removeClass(plugin.settings.checkedClass);
 						} else {
-							$el.prop("checked", true);
-							$el.next().addClass(plugin.settings.checkedClass).trigger("rc_checked");
+							$el.prop("checked", true).trigger("rc_checked");
+							$el.next().addClass(plugin.settings.checkedClass);
 						}
 					});
 				} else {
 					if ($element.attr("type") === "radio") {
 						$('input[name='+ $element.attr("name") +']').each(function(){
-							$(this).next().removeClass(plugin.settings.checkedClass).trigger("rc_unchecked");
+							$(this).trigger("rc_unchecked").next().removeClass(plugin.settings.checkedClass);
 						});
 					}
-					$element.next().toggleClass(plugin.settings.checkedClass).trigger("rc_checked");
+					if ($element.is(":checked")) {$element.trigger("rc_checked"); }
+					else {$element.trigger("rc_unchecked");}
+					$element.next().toggleClass(plugin.settings.checkedClass);
 				}
 			},
 			initEvents = function() {
