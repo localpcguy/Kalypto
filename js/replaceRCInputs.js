@@ -1,7 +1,7 @@
 /********************************
 * Replace RCInputs
 * Created & copyright (c)  by Mike Behnke
-*
+* v.0.1.0
 * http://www.local-pc-guy.com
 * Twitter: @LocalPCGuy
 *
@@ -10,6 +10,8 @@
 * usage:
 *        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
 *        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+* events: (bound on the new element)
+*        rc_elbuilt: when an element is built
 * events: (bound on the input)
 *        rc_checked: when an element is checked
 *        rc_unchecked: when an element is checked
