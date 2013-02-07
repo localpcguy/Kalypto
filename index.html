@@ -7,7 +7,7 @@
     <meta name="description" content="Replace RCInputs : Replaces Radio Buttons or Checkbox elements with graphical version(s)" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/replaceRCInputs.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/kalypto.css">
 
     <title>Replace RCInputs</title>
   </head>
@@ -17,14 +17,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/localpcguy/replaceRCInputs">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/localpcguy/kalypto">View on GitHub</a>
 
-          <h1 id="project_title">Replace RCInputs</h1>
+          <h1 id="project_title">Kalypto</h1>
           <h3 id="project_tagline">Replaces Radio Buttons or Checkbox elements with graphical version(s)</h3>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/localpcguy/replaceRCInputs/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/localpcguy/replaceRCInputs/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/localpcguy/kalypto/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/localpcguy/kalypto/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -39,7 +39,7 @@
 <p><a href="http://www.local-pc-guy.com">local-pc-guy.com</a><br />
 Twitter: <a href="http://twitter.com/localpcguy">@LocalPCGuy</a></p>
 
-<p><strong>Description:</strong> Basic plugin to create a link to use in place of a checkbox or radio button.  Styles for the checked/non-checked state should be defined in a stylesheet, and the plugin merely changes the class and keeps the checkbox updated.</p>
+<p><strong>Description:</strong> Kalypto is a basic plugin to use a simple sprite and CSS in place of a checkbox or radio button.  Styles for the checked/non-checked state should be defined in a stylesheet, and the plugin changes the class and maintains the state of the checkbox or radio button.</p>
 
 <div class="radioButtonDemo">
   <ul>
@@ -70,8 +70,8 @@ Twitter: <a href="http://twitter.com/localpcguy">@LocalPCGuy</a></p>
 
 <p><strong>usage:</strong></p>
 
-<p><pre><code>$("input[name=rDemo]").replaceRCInputs();
-$("#checkboxDemo").replaceRCInputs();</code></pre></p>
+<p><pre><code>$("input[name=rDemo]").kalypto();
+$("#checkboxDemo").kalypto();</code></pre></p>
 
 
 <p><strong>Events:</strong></p>
@@ -92,7 +92,7 @@ rc_unchecked: when an element is checked</code></pre></p>
     hideInputs: true
 }</code></pre></p>
 
-<p><a href="https://github.com/localpcguy/replaceRCInputs">View replaceRCInputs on GitHub</a></p>
+<p><a href="https://github.com/localpcguy/kalypto">View Kalypto on GitHub</a></p>
 
 <p><a href="http://lpg.mit-license.org/">Released under MIT License</a></p>
       </section>
@@ -112,10 +112,10 @@ rc_unchecked: when an element is checked</code></pre></p>
     <script>window.jQuery || document.write('<script src="javascripts/jquery-1.7.2.js"><\/script>')</script>
 
     <!-- scripts concatenated and minified via build script -->
-    <script src="javascripts/replaceRCInputs.js"></script>
+    <script src="javascripts/kalypto.js"></script>
     <script>
-      $("input[name=rDemo]").replaceRCInputs({hideInputs: false, toggleClass: "toggleR",});
-      $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+      $("input[name=rDemo]").kalypto({hideInputs: false, toggleClass: "toggleR",});
+      $("#checkboxDemo").kalypto({hideInputs: false});
     </script>
     <!-- end scripts -->
 
