@@ -1,14 +1,17 @@
 {
-    "name": "replaceRCInputs",
-    "title": "Replace Radio/Checkbox Inputs",
-    "description": "Replace RC Inputs lets you use CSS to style radio buttons and checkboxes.",
+    "name": "Kalypto",
+    "title": "Kalypto - Replace Radio/Checkbox Inputs",
+    "description": "Kalypto lets you use a simple sprite and CSS to replace and style radio buttons and checkboxes.",
     "keywords": [
         "form",
         "formfields",
+        "field",
         "replacement",
+        "custom",
         "ui",
         "checkbox",
-        "radio"
+        "radio",
+        "kalypto"
     ],
     "version": "0.1.0",
     "author": {
@@ -27,10 +30,10 @@
             "url": "http://lpg.mit-license.org/"
         }
     ],
-    "homepage": "http://localpcguy.github.com/replaceRCInputs/",
-    "demo": "http://localpcguy.github.com/replaceRCInputs/",
-    "bugs": "https://github.com/localpcguy/replaceRCInputs/issues",
-    "docs": "http://localpcguy.github.com/replaceRCInputs/",
+    "homepage": "http://localpcguy.github.com/Kalypto",
+    "demo": "http://localpcguy.github.com/Kalypto",
+    "bugs": "https://github.com/localpcguy/Kalypto/issues",
+    "docs": "http://localpcguy.github.com/Kalypto",
     "dependencies": {
         "jquery": ">=1.6.2"
     }

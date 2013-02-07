@@ -1,16 +1,19 @@
 /*************************************************************
-* Replace RCInputs jQuery plugin
+* Kalypto - replace Radio/Checkbox Inputs - jQuery plugin
 * 
 * Created & copyright (c) by Mike Behnke
 *
 * http://www.local-pc-guy.com
 * Twitter: @LocalPCGuy
 *
-* Description: Basic plugin to create a graphic to use in 
-* place of a checkbox or radio button.  Styles for the 
+* Description: Kalypto is a basic plugin to allow you to use a 
+* graphic  in place of a checkbox or radio button.  Styles for the 
 * checked/non-checked state should be defined in a 
-* stylesheet, and the plugin mearly changes the class and 
-* keeps the checkbox updated.
+* stylesheet and a sprite added, and the plugin handles building 
+* a new element, changes the class and keeps the checkbox or
+* radio button updated with the correct state.
+*
+* Formerly called ReplaceRCInputs.
 *
 * usage:
 *        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
@@ -24,10 +27,10 @@
 	}
 *
 * Demo:
-* http://localpcguy.github.com/replaceRCInputs/
+* http://localpcguy.github.com/Kalypto
 *
 * Code:
-* https://github.com/localpcguy/replaceRCInputs
+* https://github.com/localpcguy/Kalypto
 *
 * Released under MIT License
 * http://lpg.mit-license.org/
