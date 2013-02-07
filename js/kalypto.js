@@ -1,5 +1,5 @@
 /********************************
-* Replace RCInputs
+* Kalypto - Replace checkboxes and radio buttons
 * Created & copyright (c)  by Mike Behnke
 * v.0.1.0
 * http://www.local-pc-guy.com
@@ -8,8 +8,8 @@
 * Released under MIT License
 *
 * usage:
-*        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
-*        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+*        $("input[name=rDemo]").kalypto({hideInputs: false});
+*        $("#checkboxDemo").kalypto({hideInputs: false});
 * events: (bound on the new element)
 *        rc_elbuilt: when an element is built
 * events: (bound on the input)
@@ -18,7 +18,7 @@
 ********************************/
 ;(function($, undefined) {
 
-    $.replaceRCInputs = function(element, options) {
+    $.kalypto = function(element, options) {
 
         var plugin = this,
 			$element = $(element),
@@ -86,11 +86,11 @@
 
         plugin.init();
     };
-    $.fn.replaceRCInputs = function(options) {
+    $.fn.kalypto = function(options) {
         return this.each(function() {
-            if (undefined === $(this).data('replaceRCInputs')) {
-                var plugin = new $.replaceRCInputs(this, options);
-                $(this).data('replaceRCInputs', plugin);
+            if (undefined === $(this).data('kalypto')) {
+                var plugin = new $.kalypto(this, options);
+                $(this).data('kalypto', plugin);
             }
         });
     };

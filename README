@@ -16,8 +16,8 @@
 * Formerly called ReplaceRCInputs.
 *
 * usage:
-*        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});
-*        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+*        $("input[name=rDemo]").kalypto({hideInputs: false});
+*        $("#checkboxDemo").kalypto({hideInputs: false});
 *
 * options: 
 	{

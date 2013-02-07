@@ -9,18 +9,18 @@
     <title>ReplaceButtonsAndBoxes</title>
     <meta name="description" content="">
 
-    <link rel="stylesheet" href="css/replaceRCInputs.css">
+    <link rel="stylesheet" href="css/kalypto.css">
 </head>
 <body>
 
-    <h1>Replace RCInputs jQuery plugin</h1>
+    <h1>Kalypto</h1>
      
     <h2>Created &amp; copyright (c) by Mike Behnke</h2>
 
     <p>http://www.local-pc-guy.com<br />
     Twitter: @LocalPCGuy</p>
 
-    <p><strong>Description:</strong> Basic plugin to create a link to use in place of a checkbox or radio button.  Styles for the checked/non-checked state should be defined in a stylesheet, and the plugin mearly changes the class and keeps the checkbox updated.</p>
+    <p><strong>Description:</strong> Kalypto is a basic plugin to allow you to use a simple sprite graphic  in place of a checkbox or radio button.  Styles for the  checked/non-checked state should be defined in a stylesheet and a sprite added, and the plugin handles building a new element, changes the class and keeps the checkbox or radio button updated with the correct state.</p>
 
     <div class="radioButtonDemo">        
         <label for="radioDemo1">Radio 1</label>
@@ -39,8 +39,12 @@
 
     <p><strong>usage:</strong><br />
         <pre>
-        $("input[name=rDemo]").replaceRCInputs({hideInputs: false});<br />
-        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+        $("input[name=rDemo]").kalypto({hideInputs: false});<br />
+        $("#checkboxDemo").kalypto({hideInputs: false});
+        </pre></p>
+        <p><strong>Events:</strong> (bound on the new element)<br />
+        <pre>
+        rc_elbuilt: when an element is first built <br />
         </pre></p>
         <p><strong>Events:</strong> (bound on the input)<br />
         <pre>
@@ -57,7 +61,7 @@
         }
         </pre></p>
 
-    <p><a href="https://github.com/localpcguy/replaceRCInputs">View replaceRCInputs on GitHub</a></p>
+    <p><a href="https://github.com/localpcguy/kalypto">View Kalypto on GitHub</a></p>
 
     <p>Released under MIT License<br />
     http://lpg.mit-license.org/</p>
@@ -70,10 +74,10 @@
     <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.js"><\/script>')</script>
 
     <!-- scripts concatenated and minified via build script -->
-    <script src="js/replaceRCInputs.js"></script>
+    <script src="js/kalypto.js"></script>
     <script>
-        $("input[name=rDemo]").replaceRCInputs({hideInputs: false, toggleClass: "toggleR",});
-        $("#checkboxDemo").replaceRCInputs({hideInputs: false});
+        $("input[name=rDemo]").kalypto({hideInputs: false, toggleClass: "toggleR",});
+        $("#checkboxDemo").kalypto({hideInputs: false});
     </script>
     <!-- end scripts -->
 
