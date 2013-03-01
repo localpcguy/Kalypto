@@ -26,18 +26,27 @@
 				toggleClass: "toggle",
 				checkedClass: "checked",
 				hideInputs: true,
+                copyInputClasses: true,
 				dataLabel: $element.data("label") || "",
                 checkedEvent: "rc_checked",
                 uncheckedEvent: "rc_unchecked",
-                elBuiltEvent: "rc_elbuilt"
+                elBuiltEvent: "rc_elbuilt",
+                customClasses: ""
 			},
 			$customEl,
 			buildCustomElement = function() {
 				$element.after(function() {
-					if ($element.is(":checked")) {
-						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
+                    var classes = plugin.settings.toggleClass;
+                    if (plugin.settings.copyInputClasses) {
+                        classes += " " + $element.attr("class");
+                    }
+					if (plugin.settings.customClasses.length) {
+                        classes += " " + plugin.settings.customClasses;
+                    }
+                    if ($element.is(":checked")) {
+						return "<a href='#' class='" + classes + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
 					} else {
-						return "<a href='#' class='" + plugin.settings.toggleClass + "'>" + plugin.settings.dataLabel + "</a>";
+						return "<a href='#' class='" + classes + "'>" + plugin.settings.dataLabel + "</a>";
 					}
 				});
 				if (plugin.settings.hideInputs) {
