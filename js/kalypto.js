@@ -44,7 +44,7 @@
 				$customEl.trigger('rc_elbuilt');
 			},
 			handleChange = function(e) {
-				var $elementCollection = $element.attr("type") === "radio" ? $('input[name='+ $element.attr("name") +']') : $element,
+				var $elementCollection = $element.attr("type") === "radio" ? $('input[name="'+ $element.attr("name") +'"]') : $element,
 					clickedLink = this;
 				e.preventDefault();
 				
@@ -61,7 +61,7 @@
 					});
 				} else {
 					if ($element.attr("type") === "radio") {
-						$('input[name='+ $element.attr("name") +']').each(function(){
+						$('input[name="'+ $element.attr("name") +'"]').each(function(){
 							$(this).trigger("rc_unchecked").next().removeClass(plugin.settings.checkedClass);
 						});
 					}
