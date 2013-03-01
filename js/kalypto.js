@@ -26,7 +26,10 @@
 				toggleClass: "toggle",
 				checkedClass: "checked",
 				hideInputs: true,
-				dataLabel: $element.data("label") || ""
+				dataLabel: $element.data("label") || "",
+                checkedEvent: "rc_checked",
+                uncheckedEvent: "rc_unchecked",
+                elBuiltEvent: "rc_elbuilt"
 			},
 			$customEl,
 			buildCustomElement = function() {
@@ -41,7 +44,7 @@
 					$element.hide();
 				}
 				$customEl = $element.next();
-				$customEl.trigger('rc_elbuilt');
+				$element.trigger(elBuiltEvent);
 			},
 			handleChange = function(e) {
 				var $elementCollection = $element.attr("type") === "radio" ? $('input[name="'+ $element.attr("name") +'"]') : $element,
@@ -52,21 +55,21 @@
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
 						if (($el.is(":checked") && $element.attr("type") === "checkbox") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
-							$el.prop("checked", false).trigger("rc_unchecked");
+							$el.prop("checked", false).trigger(uncheckedEvent);
 							$el.next().removeClass(plugin.settings.checkedClass);
 						} else {
-							$el.prop("checked", true).trigger("rc_checked");
+							$el.prop("checked", true).trigger.(checkedEvent);
 							$el.next().addClass(plugin.settings.checkedClass);
 						}
 					});
 				} else {
 					if ($element.attr("type") === "radio") {
 						$('input[name="'+ $element.attr("name") +'"]').each(function(){
-							$(this).trigger("rc_unchecked").next().removeClass(plugin.settings.checkedClass);
+							$(this).trigger(uncheckedEvent).next().removeClass(plugin.settings.checkedClass);
 						});
 					}
-					if ($element.is(":checked")) {$element.trigger("rc_checked"); }
-					else {$element.trigger("rc_unchecked");}
+					if ($element.is(":checked")) {$element.trigger(checkedEvent); }
+					else {$element.trigger(uncheckedEvent);}
 					$element.next().toggleClass(plugin.settings.checkedClass);
 				}
 			},
