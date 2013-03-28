@@ -1,7 +1,7 @@
 /********************************
 * Kalypto - Replace checkboxes and radio buttons
 * Created & copyright (c)  by Mike Behnke
-* v.0.1.0
+* v.0.1.1
 * http://www.local-pc-guy.com
 * Twitter: @LocalPCGuy
 *
@@ -53,7 +53,7 @@
 					$element.hide();
 				}
 				$customEl = $element.next();
-				$element.trigger(elBuiltEvent);
+				$element.trigger(plugin.settings.elBuiltEvent);
 			},
 			handleChange = function(e) {
 				var $elementCollection = $element.attr("type") === "radio" ? $('input[name="'+ $element.attr("name") +'"]') : $element,
@@ -64,10 +64,10 @@
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
 						if (($el.is(":checked") && $element.attr("type") === "checkbox") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
-							$el.prop("checked", false).trigger(uncheckedEvent);
+							$el.prop("checked", false).trigger(plugin.settings.uncheckedEvent);
 							$el.next().removeClass(plugin.settings.checkedClass);
 						} else {
-							$el.prop("checked", true).trigger.(checkedEvent);
+							$el.prop("checked", true).trigger(plugin.settings.checkedEvent);
 							$el.next().addClass(plugin.settings.checkedClass);
 						}
 					});
@@ -77,8 +77,8 @@
 							$(this).trigger(uncheckedEvent).next().removeClass(plugin.settings.checkedClass);
 						});
 					}
-					if ($element.is(":checked")) {$element.trigger(checkedEvent); }
-					else {$element.trigger(uncheckedEvent);}
+					if ($element.is(":checked")) {$element.trigger(plugin.settings.checkedEvent); }
+					else {$element.trigger(plugin.settings.uncheckedEvent);}
 					$element.next().toggleClass(plugin.settings.checkedClass);
 				}
 			},
