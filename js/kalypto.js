@@ -59,7 +59,7 @@
 				var $elementCollection = $element.attr("type") === "radio" ? $('input[name="'+ $element.attr("name") +'"]') : $element,
 					clickedLink = this;
 				e.preventDefault();
-				
+
 				if (this.tagName !== "INPUT") {
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
@@ -74,7 +74,7 @@
 				} else {
 					if ($element.attr("type") === "radio") {
 						$('input[name="'+ $element.attr("name") +'"]').each(function(){
-							$(this).trigger(uncheckedEvent).next().removeClass(plugin.settings.checkedClass);
+							$(this).trigger(plugin.settings.uncheckedEvent).next().removeClass(plugin.settings.checkedClass);
 						});
 					}
 					if ($element.is(":checked")) {$element.trigger(plugin.settings.checkedEvent); }
@@ -87,9 +87,8 @@
 				$element.bind("change", handleChange);
 			};
 
-		
 		plugin.settings = {};
-        
+
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
 			buildCustomElement();
