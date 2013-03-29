@@ -1,7 +1,7 @@
 /********************************
 * Kalypto - Replace checkboxes and radio buttons
 * Created & copyright (c)  by Mike Behnke
-* v.0.1.0
+* v.0.1.1
 * http://www.local-pc-guy.com
 * Twitter: @LocalPCGuy
 *
@@ -26,47 +26,59 @@
 				toggleClass: "toggle",
 				checkedClass: "checked",
 				hideInputs: true,
-				dataLabel: $element.data("label") || ""
+                copyInputClasses: true,
+				dataLabel: $element.data("label") || "",
+                checkedEvent: "rc_checked",
+                uncheckedEvent: "rc_unchecked",
+                elBuiltEvent: "rc_elbuilt",
+                customClasses: ""
 			},
 			$customEl,
 			buildCustomElement = function() {
 				$element.after(function() {
-					if ($element.is(":checked")) {
-						return "<a href='#' class='" + plugin.settings.toggleClass + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
+                    var classes = plugin.settings.toggleClass;
+                    if (plugin.settings.copyInputClasses) {
+                        classes += " " + $element.attr("class");
+                    }
+					if (plugin.settings.customClasses.length) {
+                        classes += " " + plugin.settings.customClasses;
+                    }
+                    if ($element.is(":checked")) {
+						return "<a href='#' class='" + classes + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
 					} else {
-						return "<a href='#' class='" + plugin.settings.toggleClass + "'>" + plugin.settings.dataLabel + "</a>";
+						return "<a href='#' class='" + classes + "'>" + plugin.settings.dataLabel + "</a>";
 					}
 				});
 				if (plugin.settings.hideInputs) {
 					$element.hide();
 				}
 				$customEl = $element.next();
-				$customEl.trigger('rc_elbuilt');
+				$element.trigger(plugin.settings.elBuiltEvent);
 			},
 			handleChange = function(e) {
-				var $elementCollection = $element.attr("type") === "radio" ? $('input[name='+ $element.attr("name") +']') : $element,
+				var $elementCollection = $element.attr("type") === "radio" ? $('input[name="'+ $element.attr("name") +'"]') : $element,
 					clickedLink = this;
 				e.preventDefault();
-				
+
 				if (this.tagName !== "INPUT") {
 					$elementCollection.each(function(k, el) {
 						var $el = $(el);
 						if (($el.is(":checked") && $element.attr("type") === "checkbox") || ($element.attr("type") === "radio" && $el.not(":checked") && clickedLink !== $el.next().get(0))) {
-							$el.prop("checked", false).trigger("rc_unchecked");
+							$el.prop("checked", false).trigger(plugin.settings.uncheckedEvent);
 							$el.next().removeClass(plugin.settings.checkedClass);
 						} else {
-							$el.prop("checked", true).trigger("rc_checked");
+							$el.prop("checked", true).trigger(plugin.settings.checkedEvent);
 							$el.next().addClass(plugin.settings.checkedClass);
 						}
 					});
 				} else {
 					if ($element.attr("type") === "radio") {
-						$('input[name='+ $element.attr("name") +']').each(function(){
-							$(this).trigger("rc_unchecked").next().removeClass(plugin.settings.checkedClass);
+						$('input[name="'+ $element.attr("name") +'"]').each(function(){
+							$(this).trigger(plugin.settings.uncheckedEvent).next().removeClass(plugin.settings.checkedClass);
 						});
 					}
-					if ($element.is(":checked")) {$element.trigger("rc_checked"); }
-					else {$element.trigger("rc_unchecked");}
+					if ($element.is(":checked")) {$element.trigger(plugin.settings.checkedEvent); }
+					else {$element.trigger(plugin.settings.uncheckedEvent);}
 					$element.next().toggleClass(plugin.settings.checkedClass);
 				}
 			},
@@ -75,9 +87,8 @@
 				$element.bind("change", handleChange);
 			};
 
-		
 		plugin.settings = {};
-        
+
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
 			buildCustomElement();
