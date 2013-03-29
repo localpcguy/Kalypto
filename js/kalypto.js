@@ -1,7 +1,8 @@
+/*! "Kalypto - Replace Radio/Checkbox Inputs" MIT license, LocalPCGuy, http://localpcguy.github.com/Kalypto */
 /********************************
 * Kalypto - Replace checkboxes and radio buttons
 * Created & copyright (c)  by Mike Behnke
-* v.0.1.1
+* v.0.2.1
 * http://www.local-pc-guy.com
 * Twitter: @LocalPCGuy
 *
