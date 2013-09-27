@@ -17,6 +17,14 @@
 *
 * Kalypto = καλυπτω (Greek) which translates to "to cover, to conceal"
 *
+* browser support: 
+*	 IE8+ (been tested wtih IE7, but not officially supporting IE7 or below)
+*	     (Have not officially tested on IE11, but should work there)
+*	 Chrome (which should include Opera)
+*	 Firefox
+* 	 Mobile WebKit on iOS, Android 4+ 
+*	     (Been tested on Android 2.35+ but not officially supporting those devices)
+*
 * usage:
 *        $("input[name=rDemo]").kalypto({hideInputs: false});
 *        $("#checkboxDemo").kalypto({hideInputs: false});
