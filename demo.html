@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>ReplaceButtonsAndBoxes</title>
+    <title>Kalypto: Replace or Style Checkbox or Radio Button Inputs</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" href="css/kalypto.css">
@@ -20,7 +20,9 @@
     <p>http://www.local-pc-guy.com<br />
     Twitter: @LocalPCGuy</p>
 
-    <p><strong>Description:</strong> Kalypto is a basic plugin to allow you to use a simple sprite graphic  in place of a checkbox or radio button.  Styles for the  checked/non-checked state should be defined in a stylesheet and a sprite added, and the plugin handles building a new element, changes the class and keeps the checkbox or radio button updated with the correct state.</p>
+    <p><strong>Description:</strong> Kalypto is a basic plugin to allow you to use a simple sprite graphic in place of a checkbox or radio button. Styles for the checked/non-checked state should be defined in a stylesheet and a sprite added, and the plugin handles building a new element, changes the class and keeps the checkbox or radio button updated with the correct state. You can style the selected and unselected states with any CSS you want (even avoid a sprite, if you want to generate an image in some other method available to CSS).</p>
+
+    <p><strong>Requirements:</strong> jQuery is a requirement, Kalypto was original built against jQuery version 1.7.6, and should work through later versions.  Basic use requires CSS styles for normal and selected state as well as a sprite that contains each state.</p>
 
     <p>Kalypto = καλυπτω (Greek) which translates to "to cover, to conceal"</p>
 
@@ -44,22 +46,25 @@
         $("input[name=rDemo]").kalypto({hideInputs: false});<br />
         $("#checkboxDemo").kalypto({hideInputs: false});
         </pre></p>
-        <p><strong>Events:</strong> (bound on the new element)<br />
-        <pre>
-        rc_elbuilt: when an element is first built <br />
-        </pre></p>
         <p><strong>Events:</strong> (bound on the input)<br />
         <pre>
-        rc_checked: when an element is checked <br />
-        rc_unchecked: when an element is checked
+        k_elbuilt: when an element is first built <br />
+        k_checked: when an element is checked <br />
+        k_unchecked: when an element is checked
         </pre></p>
 
     <p><strong>options/defaults:</strong> <br />
         <pre>
         {
-            toggleClass: "toggle",
-            checkedClass: "checked",
-            hideInputs: true
+            toggleClass: "toggle",               // This is the base class for the created element
+            checkedClass: "checked",             // This is the active (or selected/checked) class
+            hideInputs: true,                    // If for some reason you don't want to hide the inputs, mainly in for the demo page
+            copyInputClasses: true,              // If there are classes on the input, by default they will be copied to the new element
+            dataLabel: "",                       // If you want text in your custom element, you can add it with a data-label attribute on the input (data-label="Custom Text")
+            checkedEvent: "k_checked",           // This event will be triggered on the input when it is checked
+            uncheckedEvent: "k_unchecked",       // This event will be triggered on the input when it is unchecked
+            elBuiltEvent: "k_elbuilt",           // This event will be triggered on the input when the custom element is built
+            customClasses: ""                    // If you want to add custom classes when it is built, add them here
         }
         </pre></p>
 
@@ -71,11 +76,9 @@
     
 
     <!-- JavaScript at the bottom for fast page loading: -->
-    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.js"><\/script>')</script>
 
-    <!-- scripts concatenated and minified via build script -->
     <script src="js/kalypto.js"></script>
     <script>
         $("input[name=rDemo]").kalypto({hideInputs: false, toggleClass: "toggleR",});
