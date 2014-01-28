@@ -36,13 +36,14 @@
         // This is the active (or selected/checked) class
         checkedClass: "checked",             
         
-        // If for some reason you don't want to hide the inputs, mainly in for the demo page
+        // If for some reason you don't want to hide the inputs
         hideInputs: true,                    
         
-        // If there are classes on the input, by default they will be copied to the new element
+        // If there are classes on the input, by default they will be copied
         copyInputClasses: true,              
         
-        // If you want text in your custom element, you can add it with a data-label attribute on the input (data-label="Custom Text")
+        // If you want text in your custom element, you can add it 
+        // with a data-label attribute on the input (data-label="Custom Text")
         dataLabel: "",                       
         
         // This event will be triggered on the input when it is checked
