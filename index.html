@@ -4,12 +4,12 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Replace RCInputs : Replaces Radio Buttons or Checkbox elements with graphical version(s)" />
+    <meta name="description" content="Kalypto : Replace Radio Buttons or Checkbox elements with graphical or CSS driven version(s)" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/kalypto.css">
 
-    <title>Replace RCInputs</title>
+    <title>Kalypto: Replace or Style Checkbox or Radio Button Inputs</title>
   </head>
 
   <body>
@@ -20,7 +20,7 @@
           <a id="forkme_banner" href="https://github.com/localpcguy/kalypto">View on GitHub</a>
 
           <h1 id="project_title">Kalypto</h1>
-          <h3 id="project_tagline">Replaces Radio Buttons or Checkbox elements with graphical version(s)</h3>
+          <h3 id="project_tagline">Replace Radio Buttons or Checkbox elements with graphical or CSS driven version(s)</h3>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/localpcguy/kalypto/zipball/master">Download this project as a .zip file</a>
@@ -78,20 +78,23 @@ $("#checkboxDemo").kalypto();</code></pre></p>
 
 <p><strong>Events:</strong></p>
 
-<p>(bound on the new element)</p>
-<p><pre><code>rc_elbuilt: when an element is initially built</code></pre></p>
-
 <p>(bound on the input)</p>
-
-<p><pre><code>rc_checked: when an element is checked
+<p><pre><code>k_elbuilt: when an element is initially built
+k_checked: when an element is checked
 rc_unchecked: when an element is checked</code></pre></p>
 
 <p><strong>options/defaults:</strong></p>
 
 <p><pre><code>{
-    toggleClass: "toggle",
-    checkedClass: "checked",
-    hideInputs: true
+    toggleClass: "toggle",               // This is the base class for the created element
+    checkedClass: "checked",             // This is the active (or selected/checked) class
+    hideInputs: true,                    // If for some reason you don't want to hide the inputs, mainly in for the demo page
+    copyInputClasses: true,              // If there are classes on the input, by default they will be copied to the new element
+    dataLabel: "",                       // If you want text in your custom element, you can add it with a data-label attribute on the input (data-label="Custom Text")
+    checkedEvent: "k_checked",           // This event will be triggered on the input when it is checked
+    uncheckedEvent: "k_unchecked",       // This event will be triggered on the input when it is unchecked
+    elBuiltEvent: "k_elbuilt",           // This event will be triggered on the input when the custom element is built
+    customClasses: ""                    // If you want to add custom classes when it is built, add them here
 }</code></pre></p>
 
 <p><a href="https://github.com/localpcguy/kalypto">View Kalypto on GitHub</a></p>
@@ -103,20 +106,20 @@ rc_unchecked: when an element is checked</code></pre></p>
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Replace RCInputs maintained by <a href="https://github.com/localpcguy">localpcguy</a></p>
+        <p class="copyright">Kalypto maintained by <a href="https://github.com/localpcguy">localpcguy</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 
     <!-- JavaScript at the bottom for fast page loading: -->
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="javascripts/jquery-1.7.2.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="javascripts/jquery-1.11.0.js"><\/script>')</script>
 
     <!-- scripts concatenated and minified via build script -->
     <script src="javascripts/kalypto.js"></script>
     <script>
-      $("input[name=rDemo]").kalypto({hideInputs: false, toggleClass: "toggleR",});
+      $("input[name=rDemo]").kalypto({hideInputs: false, toggleClass: "toggleR"});
       $("#checkboxDemo").kalypto({hideInputs: false});
     </script>
     <!-- end scripts -->
