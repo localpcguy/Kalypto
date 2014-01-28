@@ -29,7 +29,7 @@
 *        $("#checkboxDemo").kalypto({hideInputs: false});
 *
 * options: 
-	{
+    {
         // This is the base class for the created element
         toggleClass: "toggle",               
         
