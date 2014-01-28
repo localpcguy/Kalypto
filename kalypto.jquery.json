@@ -1,7 +1,7 @@
 {
     "name": "kalypto",
     "title": "Kalypto - Replace Radio/Checkbox Inputs",
-    "description": "Kalypto lets you use a simple sprite and CSS to replace and style radio buttons and checkboxes.",
+    "description": "Kalypto lets you use a simple sprite or even just CSS to replace and style radio buttons and checkboxes.",
     "keywords": [
         "form",
         "formfields",
@@ -13,7 +13,7 @@
         "radio",
         "kalypto"
     ],
-    "version": "0.2.1",
+    "version": "0.2.2",
     "author": {
         "name": "Mike Behnke",
         "url": "http://www.local-pc-guy.com"
