@@ -19,7 +19,6 @@
 *
 * browser support: 
 *	 IE8+ (been tested wtih IE7, but not officially supporting IE7 or below)
-*	     (Have not officially tested on IE11, but should work there)
 *	 Chrome (which should include Opera)
 *	 Firefox
 * 	 Mobile WebKit on iOS, Android 4+ 
@@ -31,10 +30,16 @@
 *
 * options: 
 	{
-		toggleClass: "toggle",
-		checkedClass: "checked",
-		hideInputs: true
-	}
+        toggleClass: "toggle",               // This is the base class for the created element
+        checkedClass: "checked",             // This is the active (or selected/checked) class
+        hideInputs: true,                    // If for some reason you don't want to hide the inputs, mainly in for the demo page
+        copyInputClasses: true,              // If there are classes on the input, by default they will be copied to the new element
+        dataLabel: "",                       // If you want text in your custom element, you can add it with a data-label attribute on the input (data-label="Custom Text")
+        checkedEvent: "k_checked",           // This event will be triggered on the input when it is checked
+        uncheckedEvent: "k_unchecked",       // This event will be triggered on the input when it is unchecked
+        elBuiltEvent: "k_elbuilt",           // This event will be triggered on the input when the custom element is built
+        customClasses: ""                    // If you want to add custom classes when it is built, add them here
+    }
 *
 * Demo:
 * http://localpcguy.github.com/Kalypto
