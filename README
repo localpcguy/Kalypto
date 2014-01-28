@@ -30,32 +30,32 @@
 *
 * options: 
 	{
-        // This is the base class for the created element
+        _// This is the base class for the created element_
         toggleClass: "toggle",               
         
-        // This is the active (or selected/checked) class
+        _// This is the active (or selected/checked) class_
         checkedClass: "checked",             
         
-        // If for some reason you don't want to hide the inputs
+        _// If for some reason you don't want to hide the inputs_
         hideInputs: true,                    
         
-        // If there are classes on the input, by default they will be copied
+        _// If there are classes on the input, by default they will be copied_
         copyInputClasses: true,              
         
-        // If you want text in your custom element, you can add it 
-        // with a data-label attribute on the input (data-label="Custom Text")
+        _// If you want text in your custom element, you can add it_ 
+        _// with a data-label attribute on the input (data-label="Custom Text")_
         dataLabel: "",                       
         
-        // This event will be triggered on the input when it is checked
+        _// This event will be triggered on the input when it is checked_
         checkedEvent: "k_checked",           
         
-        // This event will be triggered on the input when it is unchecked
+        _// This event will be triggered on the input when it is unchecked_
         uncheckedEvent: "k_unchecked",       
         
-        // This event will be triggered on the input when the custom element is built
+        _// This event will be triggered on the input when the custom element is built_
         elBuiltEvent: "k_elbuilt",           
 
-        // If you want to add custom classes when it is built, add them here
+        _// If you want to add custom classes when it is built, add them here_
         customClasses: ""                    
     }
 *
