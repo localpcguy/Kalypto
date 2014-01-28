@@ -30,15 +30,32 @@
 *
 * options: 
 	{
-        toggleClass: "toggle",               // This is the base class for the created element
-        checkedClass: "checked",             // This is the active (or selected/checked) class
-        hideInputs: true,                    // If for some reason you don't want to hide the inputs, mainly in for the demo page
-        copyInputClasses: true,              // If there are classes on the input, by default they will be copied to the new element
-        dataLabel: "",                       // If you want text in your custom element, you can add it with a data-label attribute on the input (data-label="Custom Text")
-        checkedEvent: "k_checked",           // This event will be triggered on the input when it is checked
-        uncheckedEvent: "k_unchecked",       // This event will be triggered on the input when it is unchecked
-        elBuiltEvent: "k_elbuilt",           // This event will be triggered on the input when the custom element is built
-        customClasses: ""                    // If you want to add custom classes when it is built, add them here
+        // This is the base class for the created element
+        toggleClass: "toggle",               
+        
+        // This is the active (or selected/checked) class
+        checkedClass: "checked",             
+        
+        // If for some reason you don't want to hide the inputs, mainly in for the demo page
+        hideInputs: true,                    
+        
+        // If there are classes on the input, by default they will be copied to the new element
+        copyInputClasses: true,              
+        
+        // If you want text in your custom element, you can add it with a data-label attribute on the input (data-label="Custom Text")
+        dataLabel: "",                       
+        
+        // This event will be triggered on the input when it is checked
+        checkedEvent: "k_checked",           
+        
+        // This event will be triggered on the input when it is unchecked
+        uncheckedEvent: "k_unchecked",       
+        
+        // This event will be triggered on the input when the custom element is built
+        elBuiltEvent: "k_elbuilt",           
+
+        // If you want to add custom classes when it is built, add them here
+        customClasses: ""                    
     }
 *
 * Demo:
@@ -46,6 +63,9 @@
 *
 * Code:
 * https://github.com/localpcguy/Kalypto
+*
+* Breaking changes:
+* -v0.2.2 - name of events is now different ( prefixed with k_ instead of rc_ )
 *
 * Released under MIT License
 * http://lpg.mit-license.org/
