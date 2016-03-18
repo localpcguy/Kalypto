@@ -48,9 +48,9 @@
                         classes += " " + plugin.settings.customClasses;
                     }
                     if ($element.is(":checked")) {
-                        return "<a href='#' class='" + classes + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</a>";
+                        return "<span class='" + classes + " " + plugin.settings.checkedClass + "'>" + plugin.settings.dataLabel + "</span>";
                     } else {
-                        return "<a href='#' class='" + classes + "'>" + plugin.settings.dataLabel + "</a>";
+                        return "<span class='" + classes + "'>" + plugin.settings.dataLabel + "</span>";
                     }
                 });
                 if (plugin.settings.hideInputs) {
