@@ -1,0 +1,19 @@
+{
+  "name": "kalypto",
+  "version": "2.3.0",
+  "description": "Replaces a checkbox element with a graphical version",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uglify": "uglifyjs js/kalypto.js -m -r '$' -c -o js/kalypto.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localpcguy/Kalypto.git"
+  },
+  "author": "Mike Behnke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/localpcguy/Kalypto/issues"
+  },
+  "homepage": "https://github.com/localpcguy/Kalypto"
+}
