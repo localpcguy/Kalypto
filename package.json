@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/localpcguy/Kalypto/issues"
   },
-  "homepage": "https://github.com/localpcguy/Kalypto"
+  "homepage": "https://github.com/localpcguy/Kalypto",
+  "devDependencies": {
+    "uglifyjs": "^2.4.10"
+  }
 }
