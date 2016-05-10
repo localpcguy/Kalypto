@@ -22,3 +22,6 @@ p {
 .toggleR.checked {
     background-position: left top;
 }
+.disabled {
+    opacity: .7;
+}

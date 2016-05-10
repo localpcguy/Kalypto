@@ -1,4 +1,4 @@
-﻿/*! 'Kalypto - Replace Radio/Checkbox Inputs' MIT license, LocalPCGuy, http://localpcguy.github.com/Kalypto */
+/*! 'Kalypto - Replace Radio/Checkbox Inputs' MIT license, LocalPCGuy, http://localpcguy.github.com/Kalypto */
 /********************************
 * Kalypto - Replace checkboxes and radio buttons
 * Created & copyright (c)  by Mike Behnke
@@ -82,6 +82,11 @@
                 if (plugin.settings.customClasses.length) {
                     classes += ' ' + plugin.settings.customClasses;
                 }
+
+                if ($element.is('[disabled]')) {
+                    classes += ' disabled';
+                }
+
                 if ($element.is(':checked')) {
                     return '<a href="#" class="' + classes + ' ' + plugin.settings.checkedClass + '">' + plugin.settings.dataLabel + '</a>';
                 } else {
@@ -100,6 +105,11 @@
             
             if (this.tagName !== 'INPUT') {
                 e.preventDefault();
+
+                if ($element.is('[disabled]')) {
+                    return;
+                }
+
                 plugin.lastClickedEl = this;
                 $element.trigger('click');
             } else {
